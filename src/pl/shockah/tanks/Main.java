@@ -8,6 +8,6 @@ public class Main {
 	public static final Random rand = new Random();
 	
 	public static void main(String[] args) {
-		Gamelib.start(new GameStandard(),new StateGame(),"Tanks");
+		Gamelib.start(new GameStandard(new StateGame()),"Tanks");
 	}
 }
