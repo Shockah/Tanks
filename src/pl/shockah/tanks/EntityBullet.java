@@ -3,7 +3,7 @@ package pl.shockah.tanks;
 import pl.shockah.glib.geom.vector.Vector2d;
 import pl.shockah.glib.gl.Graphics;
 import pl.shockah.glib.gl.color.Color;
-import pl.shockah.glib.logic.standard.EntityRenderable;
+import pl.shockah.glib.logic.EntityRenderable;
 
 public class EntityBullet extends EntityRenderable {
 	public Vector2d vel = new Vector2d();

@@ -7,8 +7,8 @@ import pl.shockah.glib.geom.vector.Vector2d;
 import pl.shockah.glib.geom.vector.Vector2i;
 import pl.shockah.glib.gl.Graphics;
 import pl.shockah.glib.gl.color.Color;
-import pl.shockah.glib.logic.standard.Entities;
-import pl.shockah.glib.logic.standard.EntityRenderable;
+import pl.shockah.glib.logic.Entities;
+import pl.shockah.glib.logic.EntityRenderable;
 import pl.shockah.glib.state.State;
 
 public class StateGame extends State {

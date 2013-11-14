@@ -7,7 +7,7 @@ import pl.shockah.glib.gl.Graphics;
 import pl.shockah.glib.gl.color.Color;
 import pl.shockah.glib.input.KInput;
 import pl.shockah.glib.input.MInput;
-import pl.shockah.glib.logic.standard.Renderable;
+import pl.shockah.glib.logic.Renderable;
 
 public class EntityTankPlayer extends EntityTank {
 	protected void onUpdate() {

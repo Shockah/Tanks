@@ -3,7 +3,7 @@ package pl.shockah.tanks;
 import pl.shockah.glib.geom.vector.Vector2d;
 import pl.shockah.glib.geom.vector.Vector2i;
 import pl.shockah.glib.input.MInput;
-import pl.shockah.glib.logic.standard.Entities;
+import pl.shockah.glib.logic.Entities;
 import pl.shockah.glib.state.State;
 
 public class Game {

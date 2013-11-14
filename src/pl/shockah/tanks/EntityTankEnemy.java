@@ -1,7 +1,7 @@
 package pl.shockah.tanks;
 
 import pl.shockah.glib.geom.vector.Vector2d;
-import pl.shockah.glib.logic.standard.Entities;
+import pl.shockah.glib.logic.Entities;
 
 public class EntityTankEnemy extends EntityTank {
 	protected Vector2d aiPos = new Vector2d();

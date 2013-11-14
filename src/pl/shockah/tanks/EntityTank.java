@@ -7,8 +7,8 @@ import pl.shockah.glib.geom.vector.Vector2d;
 import pl.shockah.glib.gl.Graphics;
 import pl.shockah.glib.gl.color.Color;
 import pl.shockah.glib.gl.tex.Image;
-import pl.shockah.glib.logic.standard.EntityRenderable;
-import pl.shockah.glib.logic.standard.Renderable;
+import pl.shockah.glib.logic.EntityRenderable;
+import pl.shockah.glib.logic.Renderable;
 
 public class EntityTank extends EntityRenderable {
 	public Color color = Color.fromHSB(Main.rand.nextFloat(),.5f+Main.rand.nextFloat()*.5f,1f);
