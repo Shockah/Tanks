@@ -10,8 +10,11 @@ import pl.shockah.glib.gl.color.Color;
 import pl.shockah.glib.logic.Entities;
 import pl.shockah.glib.logic.EntityRenderable;
 import pl.shockah.glib.state.State;
+import pl.shockah.glib.state.View;
 
 public class StateGame extends State {
+	private static Vector2i view = new Vector2i(800,600);
+	
 	protected void onCreate() {
 		AssetLoader al = Assets.createAssetLoader();
 		while (!al.finished()) {
@@ -59,8 +62,20 @@ public class StateGame extends State {
 			}
 		}.create();
 		
-		Vector2i size = State.get().getDisplaySize();
+		Vector2i size = getDisplaySize();
 		new EntityTankPlayer().create(size.toDouble().div(2));
 		for (int i = 0; i < 3; i++) new EntityTankEnemy().create(Main.rand.nextDouble()*size.x,Main.rand.nextDouble()*size.y);
+	}
+	
+	protected void onSetup() {
+		setViews();
+	}
+	protected void onDisplayChange(Vector2i size, boolean fullscreen) {
+		view.set(size);
+		setViews();
+	}
+	protected void setViews() {
+		views.clear();
+		views.add(new View(view));
 	}
 }
