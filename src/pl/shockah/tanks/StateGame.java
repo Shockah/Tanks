@@ -28,7 +28,7 @@ public class StateGame extends State {
 			protected void onRender(Graphics g) {
 				Vector2i size = State.get().getDisplaySize();
 				
-				g.translate(Entities.getType(EntityTankPlayer.class).get(0).pos.Sub(size.toDouble().div(2)).negate());
+				g.translate(Entities.getType(EntityTankPlayer.class).get(0).pos.Sub(size.Div(2)).negate());
 				Game.tremblev.set(Vector2d.make(Game.tremble,Main.rand.nextDouble()*360d));
 				g.translate(Game.tremblev);
 				
@@ -58,12 +58,12 @@ public class StateGame extends State {
 				
 				g.translate(Game.tremblev.Negate());
 				Game.tremble -= Game.tremble*.2d;
-				g.translate(Entities.getType(EntityTankPlayer.class).get(0).pos.Sub(size.toDouble().div(2)));
+				g.translate(Entities.getType(EntityTankPlayer.class).get(0).pos.Sub(size.Div(2)));
 			}
 		}.create();
 		
 		Vector2i size = getDisplaySize();
-		new EntityTankPlayer().create(size.toDouble().div(2));
+		new EntityTankPlayer().create(size.Div(2));
 		for (int i = 0; i < 3; i++) new EntityTankEnemy().create(Main.rand.nextDouble()*size.x,Main.rand.nextDouble()*size.y);
 	}
 	

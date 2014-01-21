@@ -21,6 +21,6 @@ public class Game {
 	
 	public static Vector2d getMousePos() {
 		Vector2i size = State.get().getDisplaySize();
-		return MInput.getPos().toDouble().add(Entities.getType(EntityTankPlayer.class).get(0).pos.Sub(size.toDouble().div(2)));
+		return MInput.getPos().toDouble().add(Entities.getType(EntityTankPlayer.class).get(0).pos.Sub(size.Div(2)));
 	}
 }
