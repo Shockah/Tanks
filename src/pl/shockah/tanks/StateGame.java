@@ -7,8 +7,8 @@ import pl.shockah.glib.geom.vector.Vector2d;
 import pl.shockah.glib.geom.vector.Vector2i;
 import pl.shockah.glib.gl.Graphics;
 import pl.shockah.glib.gl.color.Color;
-import pl.shockah.glib.logic.Entities;
-import pl.shockah.glib.logic.EntityRenderable;
+import pl.shockah.glib.logic.actor.Actors;
+import pl.shockah.glib.logic.actor.ActorRenderable;
 import pl.shockah.glib.state.State;
 import pl.shockah.glib.state.View;
 
@@ -24,11 +24,11 @@ public class StateGame extends State {
 		Assets.setupAssets();
 		
 		Game.reset();
-		new EntityRenderable(100000){
+		new ActorRenderable(100000){
 			protected void onRender(Graphics g) {
 				Vector2i size = State.get().getDisplaySize();
 				
-				g.translate(Entities.getType(EntityTankPlayer.class).get(0).pos.Sub(size.Div(2)).negate());
+				g.translate(Actors.getType(ActorTankPlayer.class).get(0).pos.Sub(size.Div(2)).negate());
 				Game.tremblev.set(Vector2d.make(Game.tremble,Main.rand.nextDouble()*360d));
 				g.translate(Game.tremblev);
 				
@@ -39,7 +39,7 @@ public class StateGame extends State {
 				}
 			}
 		}.create();
-		new EntityRenderable(-100000){
+		new ActorRenderable(-100000){
 			protected void onRender(Graphics g) {
 				Vector2i size = State.get().getDisplaySize();
 				
@@ -58,13 +58,13 @@ public class StateGame extends State {
 				
 				g.translate(Game.tremblev.Negate());
 				Game.tremble -= Game.tremble*.2d;
-				g.translate(Entities.getType(EntityTankPlayer.class).get(0).pos.Sub(size.Div(2)));
+				g.translate(Actors.getType(ActorTankPlayer.class).get(0).pos.Sub(size.Div(2)));
 			}
 		}.create();
 		
 		Vector2i size = getDisplaySize();
-		new EntityTankPlayer().create(size.Div(2));
-		for (int i = 0; i < 3; i++) new EntityTankEnemy().create(Main.rand.nextDouble()*size.x,Main.rand.nextDouble()*size.y);
+		new ActorTankPlayer().create(size.Div(2));
+		for (int i = 0; i < 3; i++) new ActorTankEnemy().create(Main.rand.nextDouble()*size.x,Main.rand.nextDouble()*size.y);
 	}
 	
 	protected void onSetup() {

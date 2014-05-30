@@ -1,9 +1,9 @@
 package pl.shockah.tanks;
 
 import pl.shockah.glib.geom.vector.Vector2d;
-import pl.shockah.glib.logic.Entities;
+import pl.shockah.glib.logic.actor.Actors;
 
-public class EntityTankEnemy extends EntityTank {
+public class ActorTankEnemy extends ActorTank {
 	protected Vector2d aiPos = new Vector2d();
 	
 	protected void onCreate() {
@@ -14,7 +14,7 @@ public class EntityTankEnemy extends EntityTank {
 		if (pos.distance(aiPos) <= 50) aiPos.set(Main.rand.nextDouble()*Game.mapSize.x,Main.rand.nextDouble()*Game.mapSize.y);
 		
 		double a, da;
-		a = pos.direction(Entities.getType(EntityTankPlayer.class).get(0).pos)-rotation;
+		a = pos.direction(Actors.getType(ActorTankPlayer.class).get(0).pos)-rotation;
 		da = Vector2d.make(1,rotation2).deltaAngle(a);
 		rotation2 += da*.05d;
 		
@@ -36,7 +36,7 @@ public class EntityTankEnemy extends EntityTank {
 		
 		if (blockFire > 0) blockFire--;
 		if (blockFire == 0 && Main.rand.nextInt(200) == 0) {
-			new EntityBullet(Vector2d.make(24,rotation2+rotation)).create(pos.copyMe());
+			new ActorBullet(Vector2d.make(24,rotation2+rotation)).create(pos.copyMe());
 			blockFire = blockFireMax;
 			Game.tremble += 10;
 		}

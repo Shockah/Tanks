@@ -7,10 +7,10 @@ import pl.shockah.glib.geom.vector.Vector2d;
 import pl.shockah.glib.gl.Graphics;
 import pl.shockah.glib.gl.color.Color;
 import pl.shockah.glib.gl.tex.Image;
-import pl.shockah.glib.logic.EntityRenderable;
-import pl.shockah.glib.logic.Renderable;
+import pl.shockah.glib.logic.actor.ActorRenderable;
+import pl.shockah.glib.logic.actor.Renderable;
 
-public class EntityTank extends EntityRenderable {
+public class ActorTank extends ActorRenderable {
 	public Color color = Color.fromHSB(Main.rand.nextFloat(),.5f+Main.rand.nextFloat()*.5f,1f);
 	public double rotation = 0, rotation2 = 0;
 	protected final int frameLength = 4, frameMax = Assets.ssTankTires.getCount()*frameLength, blockFireMax = 60;

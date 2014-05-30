@@ -7,9 +7,9 @@ import pl.shockah.glib.gl.Graphics;
 import pl.shockah.glib.gl.color.Color;
 import pl.shockah.glib.input.KInput;
 import pl.shockah.glib.input.MInput;
-import pl.shockah.glib.logic.Renderable;
+import pl.shockah.glib.logic.actor.Renderable;
 
-public class EntityTankPlayer extends EntityTank {
+public class ActorTankPlayer extends ActorTank {
 	protected void onUpdate() {
 		double a, da;
 		a = pos.direction(Game.getMousePos())-rotation;
@@ -38,7 +38,7 @@ public class EntityTankPlayer extends EntityTank {
 		
 		if (blockFire > 0) blockFire--;
 		if (blockFire == 0 && MInput.isPressed(MInput.LEFT)) {
-			new EntityBullet(Vector2d.make(24,rotation2+rotation)).create(pos.copyMe());
+			new ActorBullet(Vector2d.make(24,rotation2+rotation)).create(pos.copyMe());
 			blockFire = blockFireMax;
 			Game.tremble += 50;
 		}

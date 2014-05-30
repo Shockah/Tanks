@@ -3,12 +3,12 @@ package pl.shockah.tanks;
 import pl.shockah.glib.geom.vector.Vector2d;
 import pl.shockah.glib.gl.Graphics;
 import pl.shockah.glib.gl.color.Color;
-import pl.shockah.glib.logic.EntityRenderable;
+import pl.shockah.glib.logic.actor.ActorRenderable;
 
-public class EntityBullet extends EntityRenderable {
+public class ActorBullet extends ActorRenderable {
 	public Vector2d vel = new Vector2d();
 	
-	public EntityBullet(Vector2d vel) {
+	public ActorBullet(Vector2d vel) {
 		super(-5);
 		this.vel.set(vel);
 	}
