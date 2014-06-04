@@ -17,10 +17,10 @@ public class ActorTankPlayer extends ActorTank {
 		rotation2 += da*.05d;
 		
 		Vector2d keys = new Vector2d();
-		if (KInput.isDown(Keyboard.KEY_W)) keys.y -= 1;
-		if (KInput.isDown(Keyboard.KEY_S)) keys.y += 1;
-		if (KInput.isDown(Keyboard.KEY_A)) keys.x -= 1;
-		if (KInput.isDown(Keyboard.KEY_D)) keys.x += 1;
+		if (KInput.down(Keyboard.KEY_W)) keys.y -= 1;
+		if (KInput.down(Keyboard.KEY_S)) keys.y += 1;
+		if (KInput.down(Keyboard.KEY_A)) keys.x -= 1;
+		if (KInput.down(Keyboard.KEY_D)) keys.x += 1;
 		
 		if (keys.x != 0 || keys.y != 0) {
 			a = keys.direction();
@@ -37,7 +37,7 @@ public class ActorTankPlayer extends ActorTank {
 		}
 		
 		if (blockFire > 0) blockFire--;
-		if (blockFire == 0 && MInput.isPressed(MInput.LEFT)) {
+		if (blockFire == 0 && MInput.pressed(MInput.LEFT)) {
 			new ActorBullet(Vector2d.make(24,rotation2+rotation)).create(pos.copyMe());
 			blockFire = blockFireMax;
 			Game.tremble += 50;

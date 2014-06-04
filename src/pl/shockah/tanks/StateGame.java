@@ -26,22 +26,22 @@ public class StateGame extends State {
 		Game.reset();
 		new ActorRenderable(100000){
 			protected void onRender(Graphics g) {
-				Vector2i size = State.get().getDisplaySize();
+				Vector2i size = State.get().displaySize();
 				
-				g.translate(Actors.getType(ActorTankPlayer.class).get(0).pos.Sub(size.Div(2)).negate());
+				g.translate(Actors.type(ActorTankPlayer.class).get(0).pos.Sub(size.Div(2)).negate());
 				Game.tremblev.set(Vector2d.make(Game.tremble,Main.rand.nextDouble()*360d));
 				g.translate(Game.tremblev);
 				
 				g.setColor(Color.White);
-				for (int y = -size.y; y < size.y+Assets.sBackground.getTextureHeight(); y += Assets.sBackground.getTextureHeight())
-				for (int x = -size.x; x < size.x+Assets.sBackground.getTextureHeight(); x += Assets.sBackground.getTextureHeight()) {
+				for (int y = -size.y; y < size.y+Assets.sBackground.textureHeight(); y += Assets.sBackground.textureHeight())
+				for (int x = -size.x; x < size.x+Assets.sBackground.textureHeight(); x += Assets.sBackground.textureHeight()) {
 					g.draw(Assets.sBackground,x,y);
 				}
 			}
 		}.create();
 		new ActorRenderable(-100000){
 			protected void onRender(Graphics g) {
-				Vector2i size = State.get().getDisplaySize();
+				Vector2i size = State.get().displaySize();
 				
 				Color c1 = Color.Black, c2 = Color.TransparentBlack;
 				new Rectangle(0,0,Game.mapSize.x,32).drawMulticolor(g,true,c1,c1,c2,c2);
@@ -58,11 +58,11 @@ public class StateGame extends State {
 				
 				g.translate(Game.tremblev.Negate());
 				Game.tremble -= Game.tremble*.2d;
-				g.translate(Actors.getType(ActorTankPlayer.class).get(0).pos.Sub(size.Div(2)));
+				g.translate(Actors.type(ActorTankPlayer.class).get(0).pos.Sub(size.Div(2)));
 			}
 		}.create();
 		
-		Vector2i size = getDisplaySize();
+		Vector2i size = displaySize();
 		new ActorTankPlayer().create(size.Div(2));
 		for (int i = 0; i < 3; i++) new ActorTankEnemy().create(Main.rand.nextDouble()*size.x,Main.rand.nextDouble()*size.y);
 	}

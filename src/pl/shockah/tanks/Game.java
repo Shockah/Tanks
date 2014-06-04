@@ -20,7 +20,7 @@ public class Game {
 	}
 	
 	public static Vector2d getMousePos() {
-		Vector2i size = State.get().getDisplaySize();
-		return MInput.getPos().toDouble().add(Actors.getType(ActorTankPlayer.class).get(0).pos.Sub(size.Div(2)));
+		Vector2i size = State.get().displaySize();
+		return MInput.pos().toDouble().add(Actors.type(ActorTankPlayer.class).get(0).pos.Sub(size.Div(2)));
 	}
 }

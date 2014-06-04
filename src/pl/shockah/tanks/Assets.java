@@ -21,15 +21,15 @@ public class Assets {
 		sTankBase.center();
 		sTankTurret.center();
 		sBullet.center();
-		for (int i = 0; i < ssTankTires.getCount(); i++) ssTankTires.getImage(i).center();
+		for (int i = 0; i < ssTankTires.count(); i++) ssTankTires.image(i).center();
 		
-		sTankBase.getTexture().setResizeFilter(EResizeFilter.Nearest);
-		sTankTurret.getTexture().setResizeFilter(EResizeFilter.Nearest);
-		ssTankTires.getTexture().setResizeFilter(EResizeFilter.Nearest);
+		sTankBase.texture().setResizeFilter(EResizeFilter.Nearest);
+		sTankTurret.texture().setResizeFilter(EResizeFilter.Nearest);
+		ssTankTires.texture().setResizeFilter(EResizeFilter.Nearest);
 		
 		sTankBase.scale.scale(2);
 		sTankTurret.scale.scale(2);
 		sBullet.scale.scale(.5d);
-		for (int i = 0; i < ssTankTires.getCount(); i++) ssTankTires.getImage(i).scale.scale(2);
+		for (int i = 0; i < ssTankTires.count(); i++) ssTankTires.image(i).scale.scale(2);
 	}
 }

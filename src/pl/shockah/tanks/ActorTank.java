@@ -13,7 +13,7 @@ import pl.shockah.glib.logic.actor.Renderable;
 public class ActorTank extends ActorRenderable {
 	public Color color = Color.fromHSB(Main.rand.nextFloat(),.5f+Main.rand.nextFloat()*.5f,1f);
 	public double rotation = 0, rotation2 = 0;
-	protected final int frameLength = 4, frameMax = Assets.ssTankTires.getCount()*frameLength, blockFireMax = 60;
+	protected final int frameLength = 4, frameMax = Assets.ssTankTires.count()*frameLength, blockFireMax = 60;
 	protected int frame = 0, blockFire = 0;
 	
 	protected List<TiresGhost> tires = new ArrayList<>();
@@ -26,7 +26,7 @@ public class ActorTank extends ActorRenderable {
 	protected void onRegister() {
 		new Renderable(this,0d-.1d){
 			protected void onRender(Graphics g) {
-				Image imgTires = Assets.ssTankTires.getImage(0);
+				Image imgTires = Assets.ssTankTires.image(0);
 				for (TiresGhost tg : tires) {
 					g.setColor(Color.Maroon.alpha(1f/3f*tg.alpha));
 					imgTires.rotation.angle = tg.rotation;
@@ -42,7 +42,7 @@ public class ActorTank extends ActorRenderable {
 		new Renderable(this,0d-.2d){
 			protected void onRender(Graphics g) {
 				g.setColor(Color.White);
-				Image imgTires = Assets.ssTankTires.getImage(frame/frameLength);
+				Image imgTires = Assets.ssTankTires.image(frame/frameLength);
 				imgTires.rotation.angle = rotation;
 				g.draw(imgTires,pos);
 			}

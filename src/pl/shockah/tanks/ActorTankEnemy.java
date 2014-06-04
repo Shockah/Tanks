@@ -14,7 +14,7 @@ public class ActorTankEnemy extends ActorTank {
 		if (pos.distance(aiPos) <= 50) aiPos.set(Main.rand.nextDouble()*Game.mapSize.x,Main.rand.nextDouble()*Game.mapSize.y);
 		
 		double a, da;
-		a = pos.direction(Actors.getType(ActorTankPlayer.class).get(0).pos)-rotation;
+		a = pos.direction(Actors.type(ActorTankPlayer.class).get(0).pos)-rotation;
 		da = Vector2d.make(1,rotation2).deltaAngle(a);
 		rotation2 += da*.05d;
 		
