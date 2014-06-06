@@ -23,7 +23,7 @@ public class ActorTank extends ActorRenderable {
 		pos.y = Math2.limit(pos.y,0,Game.mapSize.y);
 	}
 	
-	protected void onRegister() {
+	protected void onCreateRenderables() {
 		new Renderable(this,0d-.1d){
 			protected void onRender(Graphics g) {
 				Image imgTires = Assets.ssTankTires.image(0);

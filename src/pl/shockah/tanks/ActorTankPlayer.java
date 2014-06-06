@@ -46,8 +46,8 @@ public class ActorTankPlayer extends ActorTank {
 		super.onUpdate();
 	}
 	
-	protected void onRegister() {
-		super.onRegister();
+	protected void onCreateRenderables() {
+		super.onCreateRenderables();
 		
 		new Renderable(this,0d-.5d){
 			protected void onRender(Graphics g) {
